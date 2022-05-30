@@ -23,9 +23,10 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>common-sql</module>
         <module>common-security</module>
         <module>common-model</module>
+        <module>common-sql</module>
+        <module>common-nosql</module>
     </modules>
 
 </project>
