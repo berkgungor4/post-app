@@ -10,7 +10,6 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <groupId>com.youngadessi.app</groupId>
     <artifactId>services-aggregator</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 

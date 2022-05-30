@@ -10,7 +10,6 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <groupId>com.youngadessi.app</groupId>
     <artifactId>common-sql</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
@@ -20,6 +19,8 @@
     <properties>
         <java.version>17</java.version>
     </properties>
+
+    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
