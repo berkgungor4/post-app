@@ -24,6 +24,7 @@
 
     <modules>
         <module>common-sql</module>
+        <module>common-security</module>
     </modules>
 
 </project>
