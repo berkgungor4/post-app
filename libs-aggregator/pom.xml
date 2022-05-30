@@ -25,6 +25,7 @@
     <modules>
         <module>common-sql</module>
         <module>common-security</module>
+        <module>common-model</module>
     </modules>
 
 </project>
