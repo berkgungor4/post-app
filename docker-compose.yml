@@ -1,0 +1,46 @@
+version: "3.7"
+services:
+  postgresql:
+    hostname: postgresql-service
+    container_name: postgresql-service
+    image: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      - "POSTGRES_PASSWORD=youngadessi"
+      - "POSTGRES_HOST_AUTH_METHOD=md5"
+    volumes:
+      - youngadessi_postgresql_data:/var/lib/postgresql/data
+      #- ./init.sql:/docker-entrypoint-initdb.d/init.sql
+  redis:
+    hostname: redis-service
+    container_name: redis-service
+    image: bitnami/redis:latest
+    restart: always
+    ports:
+      - "6379:6379"
+    environment:
+      - "ALLOW_EMPTY_PASSWORD=yes"
+  mongodb:
+    hostname: mongodb-service
+    container_name: mongodb-service
+    image: bitnami/mongodb:latest
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      - "MONGODB_ROOT_PASSWORD=youngadessi"
+    volumes:
+      - youngadessi_mongodb_data:/bitnami/mongodb
+  rabbitmq:
+    hostname: rabbitmq-service
+    container_name: rabbitmq-service
+    image: rabbitmq:3-management
+    restart: always
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+volumes:
+  youngadessi_postgresql_data:
+  youngadessi_mongodb_data:
