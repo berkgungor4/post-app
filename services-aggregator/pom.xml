@@ -22,6 +22,15 @@
 
     <packaging>pom</packaging>
 
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.mapstruct/mapstruct -->
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+            <version>1.5.1.Final</version>
+        </dependency>
+    </dependencies>
+
     <modules>
         <module>auth-service</module>
         <module>post-service</module>

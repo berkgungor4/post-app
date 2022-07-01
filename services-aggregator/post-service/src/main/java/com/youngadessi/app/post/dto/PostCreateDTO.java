@@ -13,7 +13,5 @@ public class PostCreateDTO {
 
     private String content;
 
-    private List<CommentCreateDTO> commentCreateDTOS;
-
-    private List<TagFetchDTO> tagFetchDTOS;
+    private List<TagCreateModel> tags;
 }
