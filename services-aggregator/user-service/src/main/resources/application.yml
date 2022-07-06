@@ -1,11 +1,13 @@
-server:
-  port: 8082
-
+spring:
+  config:
+    import:
+      - application-sql.yml
+---
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/postgres
-    username: postgres
-    password: youngadessi
-  jpa:
-    show-sql: true
-    generate-ddl: true
+    hikari:
+      pool-name: HikariUserServiceConnection
+      schema: user_schema
+
+server:
+  port: 8082

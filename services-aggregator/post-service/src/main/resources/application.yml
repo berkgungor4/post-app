@@ -1,3 +1,14 @@
+spring:
+  config:
+    import:
+      - application-sql.yml
+---
+spring:
+  datasource:
+    hikari:
+      pool-name: HikariUserServiceConnection
+      schema: post_schema
+
 server:
   port: 8081
 

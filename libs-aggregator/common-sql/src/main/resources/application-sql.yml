@@ -1,1 +1,10 @@
-
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: youngadessi
+    hikari:
+      maximum-pool-size: 20
+  jpa:
+    show-sql: true
+    generate-ddl: true
