@@ -4,8 +4,10 @@ import com.youngadessi.app.user.dto.UserCreateDTO;
 import com.youngadessi.app.user.dto.UserReadDTO;
 import com.youngadessi.app.user.dto.UserUpdateDTO;
 import com.youngadessi.app.user.entity.User;
+import com.youngadessi.app.user.mappers.UserMapper;
 import com.youngadessi.app.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.mapstruct.factory.Mappers;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -17,17 +19,13 @@ import java.util.Optional;
 public class UserService {
 
     private final UserRepository userRepository;
+
+    private final UserMapper userMapper = Mappers.getMapper(UserMapper.class);
+
     public void createUser(UserCreateDTO userCreateDTO) {
 
-        //mapstruct ???
-        User user=new User();
-        user.setEmail(userCreateDTO.getEmail());
-        user.setFullname(userCreateDTO.getFullname());
-        user.setPassword(userCreateDTO.getPassword());
-        user.setUsername(userCreateDTO.getUsername());
-
+        User user=userMapper.userCreateDTOTOPost(userCreateDTO);
         userRepository.save(user);
-
     }
 
     public void updateUser(UserUpdateDTO userUpdateDTO){
